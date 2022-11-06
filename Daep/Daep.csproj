@@ -210,6 +210,9 @@
     <Compile Include="PurInfo.cs" />
     <Compile Include="ResCode.cs" />
     <Compile Include="RevInfo.cs" />
+    <Compile Include="rptDataSet.cs">
+      <DependentUpon>rptDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="rptDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -270,6 +273,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="rptPurGrid.rdlc" />
+    <EmbeddedResource Include="rptRevGrid.rdlc" />
     <EmbeddedResource Include="rptPur.rdlc" />
     <EmbeddedResource Include="rptRev.rdlc" />
     <None Include="packages.config" />

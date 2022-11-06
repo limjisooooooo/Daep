@@ -399,7 +399,7 @@
                                                         <Paragraph>
                                                           <TextRuns>
                                                             <TextRun>
-                                                              <Value>=Fields!unitFee.Value</Value>
+                                                              <Value />
                                                               <Style>
                                                                 <Format>#,0;(#,0)</Format>
                                                               </Style>
@@ -433,7 +433,7 @@
                                                         <Paragraph>
                                                           <TextRuns>
                                                             <TextRun>
-                                                              <Value>=Fields!amt.Value</Value>
+                                                              <Value />
                                                               <Style>
                                                                 <Format>#,0;(#,0)</Format>
                                                               </Style>
@@ -542,7 +542,7 @@
                                                         <Paragraph>
                                                           <TextRuns>
                                                             <TextRun>
-                                                              <Value>=Sum(int(Fields!amt.Value))</Value>
+                                                              <Value />
                                                               <Style>
                                                                 <Format>'₩'#,0;('₩'#,0)</Format>
                                                               </Style>
@@ -2789,7 +2789,7 @@
                                                         <Paragraph>
                                                           <TextRuns>
                                                             <TextRun>
-                                                              <Value>=Fields!unitFee.Value</Value>
+                                                              <Value />
                                                               <Style>
                                                                 <Format>#,0;(#,0)</Format>
                                                               </Style>
@@ -2823,7 +2823,7 @@
                                                         <Paragraph>
                                                           <TextRuns>
                                                             <TextRun>
-                                                              <Value>=Fields!amt.Value</Value>
+                                                              <Value />
                                                               <Style>
                                                                 <Format>#,0;(#,0)</Format>
                                                               </Style>
@@ -2932,7 +2932,7 @@
                                                         <Paragraph>
                                                           <TextRuns>
                                                             <TextRun>
-                                                              <Value>=Sum(int(Fields!amt.Value))</Value>
+                                                              <Value />
                                                               <Style>
                                                                 <Format>'₩'#,0;('₩'#,0)</Format>
                                                               </Style>

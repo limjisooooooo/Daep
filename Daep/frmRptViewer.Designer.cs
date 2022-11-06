@@ -34,6 +34,7 @@ namespace Daep
             // 
             // rptViewer
             // 
+            this.rptViewer.AutoSize = true;
             this.rptViewer.LocalReport.ReportEmbeddedResource = "";
             this.rptViewer.Location = new System.Drawing.Point(0, 1);
             this.rptViewer.Name = "rptViewer";
@@ -69,6 +70,7 @@ namespace Daep
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmRptViewer_FormClosing);
             this.Load += new System.EventHandler(this.frmRptViewer_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

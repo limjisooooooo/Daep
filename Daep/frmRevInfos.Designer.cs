@@ -30,7 +30,7 @@ namespace Daep
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gridRev = new System.Windows.Forms.DataGridView();
             this.dtpSDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,6 +44,7 @@ namespace Daep
             this.bsrcRev = new System.Windows.Forms.BindingSource(this.components);
             this.bsrcDummy = new System.Windows.Forms.BindingSource(this.components);
             this.btnPrint = new System.Windows.Forms.Button();
+            this.btnBill = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridRev)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsrcCmpy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsrcProd)).BeginInit();
@@ -56,12 +57,12 @@ namespace Daep
             this.gridRev.AllowUserToAddRows = false;
             this.gridRev.AllowUserToDeleteRows = false;
             this.gridRev.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridRev.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridRev.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gridRev.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridRev.Location = new System.Drawing.Point(0, 51);
             this.gridRev.Name = "gridRev";
@@ -149,11 +150,22 @@ namespace Daep
             this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
+            // btnBill
+            // 
+            this.btnBill.Location = new System.Drawing.Point(646, 12);
+            this.btnBill.Name = "btnBill";
+            this.btnBill.Size = new System.Drawing.Size(74, 21);
+            this.btnBill.TabIndex = 10;
+            this.btnBill.Text = "거래명세서";
+            this.btnBill.UseVisualStyleBackColor = true;
+            this.btnBill.Click += new System.EventHandler(this.btnBill_Click);
+            // 
             // frmRevInfos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1343, 433);
+            this.Controls.Add(this.btnBill);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnDelInfos);
             this.Controls.Add(this.btnGetInfos);
@@ -195,5 +207,6 @@ namespace Daep
         private System.Windows.Forms.BindingSource bsrcRev;
         private System.Windows.Forms.BindingSource bsrcDummy;
         private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Button btnBill;
     }
 }

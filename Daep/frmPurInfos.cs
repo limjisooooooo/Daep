@@ -216,6 +216,34 @@ namespace Daep
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            var rows = gridPur.SelectedRows.Cast<DataGridViewRow>().Where(row => row.Cells["SEQ"].Value.ToString() != "").Select(
+                        row => new {
+                            purDate = row.Cells["매입일자"].Value.ToString(),
+                            cmpyCode = row.Cells["사업자번호"].Value.ToString(),
+                            cmpyName = row.Cells["상호"].Value.ToString(),
+                            resCode = row.Cells["품번"].Value.ToString(),
+                            resName = row.Cells["품명"].Value.ToString(),
+                            creator = row.Cells["제조처"].Value.ToString(),
+                            color = row.Cells["COLOR"].Value.ToString(),
+                            standard = row.Cells["규격"].Value.ToString(),
+                            unitFee = (int)row.Cells["단가"].Value,
+                            unit = row.Cells["단위"].Value.ToString(),
+                            count = (int)row.Cells["수량"].Value,
+                            amt = (int)row.Cells["금액"].Value,
+                            tag = row.Cells["비고"].Value.ToString(),
+                            seq = (int)row.Cells["SEQ"].Value,
+            });
+            if (rows.Count() == 0)
+            {
+                return;
+            }
+
+            frmRptViewer frmRptViewer = new frmRptViewer(rows, "pur");
+            frmRptViewer.ShowDialog();
+        }
+
+        private void btnBill_Click(object sender, EventArgs e)
+        {
             List<PurInfo> purInfos = new List<PurInfo>();
             foreach (DataGridViewRow row in gridPur.SelectedRows)
             {

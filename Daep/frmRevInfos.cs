@@ -236,8 +236,36 @@ namespace Daep
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            var rows = gridRev.SelectedRows.Cast<DataGridViewRow>().Where(row => row.Cells["SEQ"].Value.ToString() != "").Select(
+                        row => new {
+                            revDate = row.Cells["매출일자"].Value.ToString(),
+                            cmpyCode = row.Cells["사업자번호"].Value.ToString(),
+                            cmpyName = row.Cells["상호"].Value.ToString(),
+                            prodCode = row.Cells["품번"].Value.ToString(),
+                            prodName = row.Cells["품명"].Value.ToString(),
+                            type = row.Cells["차종"].Value.ToString(),
+                            color = row.Cells["COLOR"].Value.ToString(),
+                            standard = row.Cells["규격"].Value.ToString(),
+                            unitFee = (int)row.Cells["단가"].Value,
+                            unit = row.Cells["단위"].Value.ToString(),
+                            count = (int)row.Cells["수량"].Value,
+                            amt = (int)row.Cells["금액"].Value,
+                            tag = row.Cells["비고"].Value.ToString(),
+                            seq = (int)row.Cells["SEQ"].Value,
+            });
+            if (rows.Count() == 0)
+            {
+                return;
+            }
+            
+            frmRptViewer frmRptViewer = new frmRptViewer(rows, "rev");
+            frmRptViewer.ShowDialog();
+        }
+
+        private void btnBill_Click(object sender, EventArgs e)
+        {
             List<RevInfo> revInfos = new List<RevInfo>();
-            foreach(DataGridViewRow row in gridRev.SelectedRows)
+            foreach (DataGridViewRow row in gridRev.SelectedRows)
             {
                 if (row.Cells["SEQ"].Value.ToString() == "")
                 {

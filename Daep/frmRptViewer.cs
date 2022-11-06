@@ -13,9 +13,33 @@ namespace Daep
 {
     public partial class frmRptViewer : Form
     {
+        public frmRptViewer(System.Collections.IEnumerable rows, string where)
+        {
+            InitializeComponent();
+            ReportDataSource rds;
+            rptViewer.Width = 1090;
+            
+            switch (where)
+            {
+                case "rev":      
+                    rds = new ReportDataSource("revInfos_grid", rows);                    
+                    this.rptViewer.LocalReport.ReportEmbeddedResource = "Daep.rptRevGrid.rdlc";
+                    break;
+                case "pur":
+                    rds = new ReportDataSource("purInfos_grid", rows);
+                    this.rptViewer.LocalReport.ReportEmbeddedResource = "Daep.rptPurGrid.rdlc";
+                    break;
+                default:
+                    return;
+            }
+            this.rptViewer.LocalReport.DataSources.Clear();
+            this.rptViewer.LocalReport.DataSources.Add(rds);
+            
+        }
         public frmRptViewer(List<RevInfo> revInfos)
         {
             InitializeComponent();
+            rptViewer.Width = 734;
             RevInfo.getRptData(revInfos);
             ReportDataSource rds = new ReportDataSource("revInfos", dbWork.ds.Tables["rptRev"]);
             this.rptViewer.LocalReport.DataSources.Clear();
